@@ -322,12 +322,12 @@ const rarityOf = (special, label, category, s, v) => {
   if (special === "Illegal") return "Reject";
   if (special === "Pure White") return "Legendary";
   if (special === "Neon") return "Legendary";
-  if (special === "Vivid") return "Ultra Rare";
+  if (special === "Vivid") return "Exotic";
   if (special === "Grayscale") return "Common";
 
   if (label === "Pastel"){
     if (v === 100) return "Legendary";
-    if (v >= 97) return "Ultra Rare";
+    if (v >= 97) return "Exotic";
     return "Rare";
   }
 
@@ -335,13 +335,13 @@ const rarityOf = (special, label, category, s, v) => {
     const L = brightLine(s);
     if (!isNum(L) || L <= 10) return "";
     if (100*(v - 10) >= 83*(L - 10)) return "Legendary";
-    if (2*(v - 10) >= (L - 10)) return "Ultra Rare";
+    if (2*(v - 10) >= (L - 10)) return "Exotic";
     return "Rare";
   }
 
   if (label === "Bright"){
     if (v >= 85 || s >= 87) return "Legendary";
-    if (v >= 62 || s >= 86) return "Ultra Rare";
+    if (v >= 62 || s >= 86) return "Exotic";
     return "Rare";
   }
 
@@ -355,7 +355,7 @@ const rarityOf = (special, label, category, s, v) => {
   if (category === "Unnatural"){
     if (v <= (s/2 + 50)) return "Uncommon";
     if (v <= (s/2 + 90)) return "Rare";
-    return "Ultra Rare";
+    return "Exotic";
   }
 
   if (category === "Warm Natural"){
